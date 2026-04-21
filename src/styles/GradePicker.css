@@ -1,0 +1,144 @@
+:root {
+  --ethio-green: #009732;
+  --ethio-yellow: #FCD116;
+  --ethio-red: #DA121A;
+}
+
+.grade-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Cultural Pattern Overlay */
+.pattern-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.05;
+  pointer-events: none;
+  background-image: radial-gradient(#333 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.character-bubble {
+  background: white;
+  padding: 15px 25px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  margin-bottom: 40px;
+  border: 3px solid var(--ethio-yellow);
+  animation: float 3s ease-in-out infinite;
+}
+
+.grade-selection-area {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  max-width: 400px;
+  z-index: 2;
+}
+
+.grade-monster-card {
+  border: none;
+  background: white;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 8px 0px #ddd;
+  border: 3px solid transparent;
+}
+
+.grade-monster-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--bg-color);
+  box-shadow: 0 12px 0px #ccc;
+}
+
+.grade-monster-card:active {
+  transform: translateY(4px);
+  box-shadow: 0 2px 0px #ccc;
+}
+
+.grade-visual {
+  width: 70px;
+  height: 70px;
+  background: var(--bg-color);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px;
+}
+
+.grade-emoji {
+  font-size: 2.5rem;
+}
+
+.grade-text {
+  text-align: left;
+  flex-grow: 1;
+}
+
+.grade-text h3 {
+  margin: 0;
+  font-size: 1.6rem;
+  color: #333;
+}
+
+.grade-text span {
+  color: #777;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+}
+
+.go-arrow {
+  background: #eee;
+  padding: 8px 15px;
+  border-radius: 12px;
+  font-weight: bold;
+  color: #555;
+}
+
+.grade-monster-card:hover .go-arrow {
+  background: var(--bg-color);
+  color: white;
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.back-circle {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: none;
+  background: white;
+  font-size: 1.2rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  cursor: pointer;
+}

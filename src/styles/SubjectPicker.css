@@ -1,0 +1,165 @@
+.subject-page {
+  height: 100vh; /* prevent extra scroll */
+  background: linear-gradient(135deg, #e0f7ff, #fef9ff);
+  padding: 20px 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* distribute content */
+  align-items: center;
+  overflow: hidden; /* remove scrolling */
+  font-family: 'Comic Sans MS', 'Chalkboard SE', sans-serif;
+}
+
+/* HERO SECTION */
+.subject-hero {
+  margin-bottom: 15px;
+  width: 100%;
+  max-width: 420px;
+}
+
+.buddy-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.buddy-emoji {
+  font-size: 3.5rem;
+  animation: bounce 2s infinite;
+}
+
+/* Cute bounce animation */
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.speech-bubble {
+  background: #ffffff;
+  padding: 12px 18px;
+  border-radius: 20px 20px 20px 5px;
+  box-shadow: 0 8px 15px rgba(0,0,0,0.05);
+}
+
+.speech-bubble h2 {
+  margin: 0;
+  color: #2d3436;
+  font-size: 1.2rem;
+}
+
+.speech-bubble p {
+  margin: 3px 0 0;
+  color: #636e72;
+  font-size: 0.9rem;
+}
+
+/* GRID */
+.subject-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px; /* reduced spacing */
+  width: 100%;
+  max-width: 400px;
+}
+
+/* ISLAND CARD */
+.subject-island {
+  position: relative;
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.island-content {
+  background: linear-gradient(145deg, #ffffff, #f8fbff);
+  border-radius: 25px;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  border: 3px solid var(--island-color);
+}
+
+/* ICON */
+.island-icon-wrapper {
+  width: 65px;
+  height: 65px;
+  background: var(--island-color);
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 15px;
+  box-shadow: inset 0 -4px 0 rgba(0,0,0,0.15);
+}
+
+.island-icon {
+  font-size: 2.5rem;
+}
+
+/* TEXT */
+.island-text {
+  text-align: left;
+  flex-grow: 1;
+}
+
+.island-text h3 {
+  margin: 0;
+  font-size: 1.4rem;
+  color: #2d3436;
+}
+
+.island-text p {
+  margin: 2px 0 0;
+  color: #636e72;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* BADGE */
+.island-badge {
+  background: var(--island-color);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 0.75rem;
+}
+
+/* SOFT SHADOW */
+.island-shadow {
+  position: absolute;
+  bottom: -6px;
+  left: 8%;
+  width: 84%;
+  height: 100%;
+  background: var(--island-color);
+  opacity: 0.2;
+  border-radius: 25px;
+  z-index: 1;
+}
+
+/* INTERACTIONS */
+.subject-island:hover {
+  transform: translateY(-5px) scale(1.02);
+}
+
+.subject-island:active {
+  transform: scale(0.97);
+}
+
+/* ETHIOPIAN BORDER */
+.ethio-border {
+  width: 100%;
+  height: 10px;
+  background: repeating-linear-gradient(
+    45deg,
+    #009732, #009732 15px,
+    #FCD116 15px, #FCD116 30px,
+    #DA121A 30px, #DA121A 45px
+  );
+  border-radius: 10px;
+}
