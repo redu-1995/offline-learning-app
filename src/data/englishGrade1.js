@@ -335,38 +335,77 @@ export const englishGrade1 = {
   }
   ],
 s2: [
-  // A
+  // --- GROUP 1: A, B, C, D ---
   { id: 'g1_u1_a_h', type: 'alphabet-hero', big: 'A', small: 'a', icon: '/images/axe.png', name: 'Axe' },
-  { id: 'g1_u1_a_v', type: 'phonics-video', title: 'The "A" Sound', videoUrl: '/video/en/a_sound.mp4' },
-  // B
   { id: 'g1_u1_b_h', type: 'alphabet-hero', big: 'B', small: 'b', icon: '/images/book.png', name: 'Book' },
-  { id: 'g1_u1_b_v', type: 'phonics-video', title: 'The "B" Sound', videoUrl: '/video/en/b_sound.mp4' },
-  // C
   { id: 'g1_u1_c_h', type: 'alphabet-hero', big: 'C', small: 'c', icon: '/images/chair.png', name: 'Chair' },
-  { id: 'g1_u1_c_v', type: 'phonics-video', title: 'The "C" Sound', videoUrl: '/video/en/c_sound.mp4' },
-  // D
   { id: 'g1_u1_d_h', type: 'alphabet-hero', big: 'D', small: 'd', icon: '/images/desk.png', name: 'Desk' },
-  { id: 'g1_u1_d_v', type: 'phonics-video', title: 'The "D" Sound', videoUrl: '/video/en/d_sound.mp4' },
-  
-  // Vocab & Quiz
   {
-    id: 'g1_u1_words_2', // Changed to words_2 since this is Section 2
-    type: 'letter-focus',
-    title: 'A, B, C and D Words',
-    items: [
-      { word: 'Arm', icon: '💪', audio: '/audio/en/g1/arm.mp3' },    
-      { word: 'Bag', icon: '🎒', audio: '/audio/en/g1/bag.mp3' },   
-      { word: 'Chair', icon: '🪑', audio: '/audio/en/g1/chair.mp3' }, 
-      { word: 'Desk', icon: '🖥️', audio: '/audio/en/g1/desk.mp3' }    
-    ]
-  },
-  {
-    type: 'quiz', 
-    question: 'Which one is the "Book"?',
-  options: ['/images/book.png', '/images/desk.png', '/images/house.png'],
+    id: 'quiz_ad',
+    type: 'quiz',
+    question: 'Which one starts with the "B" sound?',
+    options: ['/images/axe.png', '/images/book.png', '/images/chair.png'],
     correct: 1
+  },
+
+  // --- GROUP 2: E, F, G, H ---
+  { id: 'g1_u1_e_h', type: 'alphabet-hero', big: 'E', small: 'e', icon: '/images/eraser.png', name: 'Eraser' },
+  { id: 'g1_u1_f_h', type: 'alphabet-hero', big: 'F', small: 'f', icon: '/images/fish.png', name: 'Fish' },
+  { id: 'g1_u1_g_h', type: 'alphabet-hero', big: 'G', small: 'g', icon: '/images/glass.png', name: 'Glass' },
+  { id: 'g1_u1_h_h', type: 'alphabet-hero', big: 'H', small: 'h', icon: '/images/house.png', name: 'House' },
+  {
+    id: 'quiz_eh',
+    type: 'quiz',
+    question: 'Which one is the "Fish"?',
+    options: ['/images/fish.png', '/images/eraser.png', '/images/glass.png'],
+    correct: 0
+  },
+
+  // --- GROUP 3: I, J, K, L, M ---
+  { id: 'g1_u1_i_h', type: 'alphabet-hero', big: 'I', small: 'i', icon: '/images/ink.png', name: 'Ink' },
+  { id: 'g1_u1_j_h', type: 'alphabet-hero', big: 'J', small: 'j', icon: '/images/jam.png', name: 'Jam' },
+  { id: 'g1_u1_k_h', type: 'alphabet-hero', big: 'K', small: 'k', icon: '/images/king.png', name: 'King' },
+  { id: 'g1_u1_l_h', type: 'alphabet-hero', big: 'L', small: 'l', icon: '/images/lion.png', name: 'Lion' },
+  { id: 'g1_u1_m_h', type: 'alphabet-hero', big: 'M', small: 'm', icon: '/images/moon.png', name: 'Moon' },
+  {
+    id: 'quiz_im',
+    type: 'quiz',
+    question: 'Find the "Lion"',
+    options: ['/images/jam.png', '/images/king.png', '/images/lion.png'],
+    correct: 2
+  },
+
+  // --- GROUP 4: N, O, P, Q, R, S ---
+  { id: 'g1_u1_n_h', type: 'alphabet-hero', big: 'N', small: 'n', icon: '/images/nurse.png', name: 'Nurse' },
+  { id: 'g1_u1_o_h', type: 'alphabet-hero', big: 'O', small: 'o', icon: '/images/orange.png', name: 'Orange' },
+  { id: 'g1_u1_p_h', type: 'alphabet-hero', big: 'P', small: 'p', icon: '/images/pancake.png', name: 'Pancake' },
+  { id: 'g1_u1_q_h', type: 'alphabet-hero', big: 'Q', small: 'q', icon: '/images/queen.png', name: 'Queen' },
+  { id: 'g1_u1_r_h', type: 'alphabet-hero', big: 'R', small: 'r', icon: '/images/rain.png', name: 'Rain' },
+  { id: 'g1_u1_s_h', type: 'alphabet-hero', big: 'S', small: 's', icon: '/images/sandal.png', name: 'Sandal' },
+  {
+    id: 'quiz_ns',
+    type: 'quiz',
+    question: 'Which one starts with "P"?',
+    options: ['/images/pancake.png', '/images/nurse.png', '/images/orange.png'],
+    correct: 0
+  },
+
+  // --- GROUP 5: T, U, V, W, X, Y, Z ---
+  { id: 'g1_u1_t_h', type: 'alphabet-hero', big: 'T', small: 't', icon: '/images/tomato.png', name: 'Tomato' },
+  { id: 'g1_u1_u_h', type: 'alphabet-hero', big: 'U', small: 'u', icon: '/images/umbrella.png', name: 'Umbrella' },
+  { id: 'g1_u1_v_h', type: 'alphabet-hero', big: 'V', small: 'v', icon: '/images/van.png', name: 'Van' },
+  { id: 'g1_u1_w_h', type: 'alphabet-hero', big: 'W', small: 'w', icon: '/images/watch.png', name: 'Watch' },
+  { id: 'g1_u1_x_h', type: 'alphabet-hero', big: 'X', small: 'x', icon: '/images/box.png', name: 'Box' },
+  { id: 'g1_u1_y_h', type: 'alphabet-hero', big: 'Y', small: 'y', icon: '/images/yoyo.png', name: 'Yo-yo' },
+  { id: 'g1_u1_z_h', type: 'alphabet-hero', big: 'Z', small: 'z', icon: '/images/zebra.png', name: 'Zebra' },
+  {
+    id: 'quiz_tz',
+    type: 'quiz',
+    question: 'Which one is the "Van"?',
+    options: ['/images/van.png', '/images/watch.png', '/images/tomato.png'],
+    correct: 0
   }
-],
+]
     }
   }
 };
