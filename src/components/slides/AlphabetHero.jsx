@@ -1,3 +1,4 @@
+import './AlphabetHero.css';
 const AlphabetHero = ({ current, playSound }) => {
 
   return (
@@ -10,6 +11,7 @@ const AlphabetHero = ({ current, playSound }) => {
       </div>
 
       {/* ONLY SHOW GRID IF letters EXISTS */}
+
       {current.letters && current.letters.length > 0 && (
         <div className="word-grid">
 
