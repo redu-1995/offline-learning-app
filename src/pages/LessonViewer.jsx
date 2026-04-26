@@ -116,6 +116,8 @@ const LessonViewer = ({ unitData = [], onComplete }) => {
             playSound={playSound}
           />
         );
+        case 'audio-discovery':
+        return <AudioDictionary current={current} playSound={playSound} />;
 
       default:
         return (
