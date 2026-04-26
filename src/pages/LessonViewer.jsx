@@ -4,7 +4,7 @@ import '../styles/LessonViewer.css';
 // Slide Components
 import AlphabetHero from '../components/slides/AlphabetHero';
 import LetterFocus from '../components/slides/LetterFocus';
-import QuizSlide from '../components/slides/QuizSlide'; // ✅ FIXED IMPORT
+import QuizSlide from '../components/slides/QuizSlide'; 
 
 const LessonViewer = ({ unitData = [], onComplete }) => {
 
