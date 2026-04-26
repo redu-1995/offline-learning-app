@@ -79,6 +79,7 @@ function App() {
         {/* STEP 4: ACTUAL LESSON ENGINE */}
         {currentView === 'viewer' && (
           <LessonViewer 
+            key = {selections.section}
             unitData={selections.sectionData} 
             onComplete={() => setCurrentView('menu')} 
           />
