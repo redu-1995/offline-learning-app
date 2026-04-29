@@ -5,6 +5,8 @@ import '../styles/LessonViewer.css';
 import AlphabetHero from '../components/slides/AlphabetHero';
 import LetterFocus from '../components/slides/LetterFocus';
 import QuizSlide from '../components/slides/QuizSlide'; 
+import AudioDiscovery from '../components/slides/AudioDiscovery';
+
 
 const LessonViewer = ({ unitData = [], onComplete }) => {
 
@@ -76,6 +78,12 @@ const LessonViewer = ({ unitData = [], onComplete }) => {
     }
   };
 
+  const handleExit = () => {
+    // You can add a confirmation here if you like
+    // if (window.confirm("Do you want to leave the lesson?")) {
+       onComplete(); 
+    // }
+  };
   // -----------------------------
   // RENDER SLIDE ENGINE
   // -----------------------------
@@ -117,7 +125,7 @@ const LessonViewer = ({ unitData = [], onComplete }) => {
           />
         );
         case 'audio-discovery':
-        return <AudioDictionary current={current} playSound={playSound} />;
+        return <AudioDiscovery current={current} playSound={playSound} />;
 
       default:
         return (
@@ -137,7 +145,9 @@ const LessonViewer = ({ unitData = [], onComplete }) => {
 
       {/* TOP NAV */}
       <div className="viewer-nav">
-
+        <button className="exit-btn" onClick={handleExit}>
+          ✕ Close
+        </button>
         <button
           className="nav-back-btn"
           onClick={handleBack}

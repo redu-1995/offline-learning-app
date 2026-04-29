@@ -341,11 +341,11 @@ section2: [
     type: 'audio-discovery',
     big: 'A',
     small: 'a',
-    audio: '/audio/en/g1/a_words_group.mp3', // Audio says: "A is for Axe, Apple, and Ant"
+    audio: '/audio/en/g1/a_words_group.mp3', 
     subItems: [
-      { name: 'Axe', image: '/images/axe.png' },
-      { name: 'Apple', image: '/images/apple.png' },
-      { name: 'Ant', image: '/images/ant.png' }
+      { name: 'Apple', image: '/images/apple.webp' },
+      { name: 'Axe', image: '/images/axe.jpg' },
+      { name: 'arm', image: '/images/arm.jpg' }
     ]
   },
   {
@@ -355,9 +355,9 @@ section2: [
     small: 'b',
     audio: '/audio/en/g1/b_words_group.mp3', // Audio says: "B is for Book, Ball, and Bee"
     subItems: [
-      { name: 'Book', image: '/images/book.png' },
-      { name: 'Ball', image: '/images/ball.png' },
-      { name: 'Bee', image: '/images/bee.png' }
+      { name: 'Book', image: '/images/book.webp' },
+      { name: 'Bag', image: '/images/bag.webp' },
+      { name: 'Bat', image: '/images/bat.jpg' }
     ]
   },
   {
@@ -367,9 +367,9 @@ section2: [
     small: 'c',
     audio: '/audio/en/g1/c_words_group.mp3', // Audio says: "C is for Chair, Cat, and Cup"
     subItems: [
-      { name: 'Chair', image: '/images/chair.png' },
-      { name: 'Cat', image: '/images/cat.png' },
-      { name: 'Cup', image: '/images/cup.png' }
+      { name: 'Chair', image: '/images/chair.webp' },
+      { name: 'Cow', image: '/images/cow.webp' },
+      { name: 'Carrot', image: '/images/carrot.webp' }
     ]
   },
   {
@@ -379,9 +379,9 @@ section2: [
     small: 'd',
     audio: '/audio/en/g1/d_words_group.mp3', // Audio says: "D is for Desk, Dog, and Duck"
     subItems: [
-      { name: 'Desk', image: '/images/desk.png' },
-      { name: 'Dog', image: '/images/dog.png' },
-      { name: 'Duck', image: '/images/duck.png' }
+      { name: 'Desk', image: '/images/desk.webp' },
+      { name: 'Duster', image: '/images/duster.jppg' },
+      { name: 'Dog', image: '/images/dog.jpg' }
     ]
   },
 
@@ -390,21 +390,21 @@ section2: [
     id: 'quiz_ad_1',
     type: 'quiz',
     question: 'Which one starts with "A"?',
-    options: ['/images/axe.png', '/images/book.png', '/images/desk.png'],
+    options: ['/images/arm.jpg', '/images/book.webp', '/images/desk.webp'],
     correct: 0
   },
   {
     id: 'quiz_ad_2',
     type: 'quiz',
     question: 'Find the "Dog"',
-    options: ['/images/cat.png', '/images/dog.png', '/images/ant.png'],
+    options: ['/images/carrot.webp', '/images/dog.jpg', '/images/ant.png'],
     correct: 1
   },
   {
     id: 'quiz_ad_3',
     type: 'quiz',
     question: 'Which one is the "Chair"?',
-    options: ['/images/cup.png', '/images/chair.png', '/images/ball.png'],
+    options: ['/images/desk.webp', '/images/chair.webp', '/images/bag.jpg'],
     correct: 1
   },
   // --- GROUP 2: E, F, G, H ---
@@ -415,9 +415,9 @@ section2: [
     small: 'e',
     audio: '/audio/en/g1/e_words_group.mp3', // Audio: "E is for Eraser, Egg, and Elephant"
     subItems: [
-      { name: 'Eraser', image: '/images/eraser.png' },
-      { name: 'Egg', image: '/images/egg.png' },
-      { name: 'Elephant', image: '/images/elephant.png' }
+      { name: 'Eraser', image: '/images/eraser.webp' },
+      { name: 'Elephant', image: '/images/elephant.webp' },
+      { name: 'Elbow', image: '/images/elbow.jpg' }
     ]
   },
   {
@@ -427,9 +427,9 @@ section2: [
     small: 'f',
     audio: '/audio/en/g1/f_words_group.mp3', // Audio: "F is for Fish, Fan, and Fork"
     subItems: [
-      { name: 'Fish', image: '/images/fish.png' },
-      { name: 'Fan', image: '/images/fan.png' },
-      { name: 'Fork', image: '/images/fork.png' }
+      { name: 'Fish', image: '/images/fish.webp' },
+      { name: 'Fox', image: '/images/fox.jpg' },
+      { name: 'Foot', image: '/images/foot.webp' }
     ]
   },
   {
@@ -439,9 +439,9 @@ section2: [
     small: 'g',
     audio: '/audio/en/g1/g_words_group.mp3', // Audio: "G is for Glass, Goat, and Gift"
     subItems: [
-      { name: 'Glass', image: '/images/glass.png' },
-      { name: 'Goat', image: '/images/goat.png' },
-      { name: 'Gift', image: '/images/gift.png' }
+      { name: 'Glass', image: '/images/glass.webp' },
+      { name: 'Grass', image: '/images/grass.webp' },
+      { name: 'Green', image: '/images/green.webp' }
     ]
   },
   {
@@ -451,9 +451,9 @@ section2: [
     small: 'h',
     audio: '/audio/en/g1/h_words_group.mp3', // Audio: "H is for House, Hat, and Hippo"
     subItems: [
-      { name: 'House', image: '/images/house.png' },
-      { name: 'Hat', image: '/images/hat.png' },
-      { name: 'Hippo', image: '/images/hippo.png' }
+      { name: 'Hand', image: '/images/hand.webp' },
+      { name: 'House', image: '/images/house.jpg' },
+      { name: 'Hat', image: '/images/hat.webp' }
     ]
   },
 
@@ -461,22 +461,22 @@ section2: [
   {
     id: 'quiz_eh_1',
     type: 'quiz',
-    question: 'Which one is the "Fish"?',
-    options: ['/images/fish.png', '/images/egg.png', '/images/glass.png'],
+    question: 'Which one is the "Foot"?',
+    options: ['/images/foot.webp', '/images/elbow.jpg', '/images/glass.webp'],
     correct: 0
   },
   {
     id: 'quiz_eh_2',
     type: 'quiz',
     question: 'Find the "Hat"',
-    options: ['/images/gift.png', '/images/hat.png', '/images/fan.png'],
+    options: ['/images/house.jpg', '/images/hat.webp', '/images/fox.jpg'],
     correct: 1
   },
   {
     id: 'quiz_eh_3',
     type: 'quiz',
     question: 'Which one starts with "E"?',
-    options: ['/images/hippo.png', '/images/goat.png', '/images/eraser.png'],
+    options: ['/images/green.webp', '/images/glass.webp', '/images/eraser.webp'],
     correct: 2
   },
   // --- GROUP 3: I, J, K, L, M ---
@@ -487,9 +487,10 @@ section2: [
     small: 'i',
     audio: '/audio/en/g1/i_words_group.mp3', // Audio: "I is for Ink, Igloo, and Insect"
     subItems: [
-      { name: 'Ink', image: '/images/ink.png' },
-      { name: 'Igloo', image: '/images/igloo.png' },
-      { name: 'Insect', image: '/images/insect.png' }
+      { name: 'Ink', image: '/images/ink.webp' },
+      { name: 'Insect', image: '/images/insect.webp' },
+      { name: 'Igloo', image: '/images/igloo.jpg' },
+      
     ]
   },
   {
@@ -499,9 +500,9 @@ section2: [
     small: 'j',
     audio: '/audio/en/g1/j_words_group.mp3', // Audio: "J is for Jam, Jeep, and Jug"
     subItems: [
-      { name: 'Jam', image: '/images/jam.png' },
-      { name: 'Jeep', image: '/images/jeep.png' },
-      { name: 'Jug', image: '/images/jug.png' }
+      { name: 'Jam', image: '/images/jam.webp' },
+      { name: 'Jar', image: '/images/jar.webp' },
+      { name: 'Jet', image: '/images/jet.webp' }
     ]
   },
   {
@@ -511,9 +512,9 @@ section2: [
     small: 'k',
     audio: '/audio/en/g1/k_words_group.mp3', // Audio: "K is for King, Kite, and Key"
     subItems: [
-      { name: 'King', image: '/images/king.png' },
-      { name: 'Kite', image: '/images/kite.png' },
-      { name: 'Key', image: '/images/key.png' }
+      { name: 'King', image: '/images/king.webp' },
+      { name: 'Kite', image: '/images/kite.jpg' },
+      { name: 'Key', image: '/images/key.jpg' }
     ]
   },
   {
@@ -523,9 +524,9 @@ section2: [
     small: 'l',
     audio: '/audio/en/g1/l_words_group.mp3', // Audio: "L is for Lion, Lamp, and Leaf"
     subItems: [
-      { name: 'Lion', image: '/images/lion.png' },
-      { name: 'Lamp', image: '/images/lamp.png' },
-      { name: 'Leaf', image: '/images/leaf.png' }
+      { name: 'Lion', image: '/images/lion.webp' },
+      { name: 'Leaf', image: '/images/leaf.webp' },
+      { name: 'Leg', image: '/images/leg.webp' }
     ]
   },
   {
@@ -535,9 +536,9 @@ section2: [
     small: 'm',
     audio: '/audio/en/g1/m_words_group.mp3', // Audio: "M is for Moon, Mouse, and Mug"
     subItems: [
-      { name: 'Moon', image: '/images/moon.png' },
-      { name: 'Mouse', image: '/images/mouse.png' },
-      { name: 'Mug', image: '/images/mug.png' }
+      { name: 'Moon', image: '/images/moon.webp' },
+      { name: 'Mouse', image: '/images/mouse.webp' },
+      { name: 'Match', image: '/images/match.webp' }
     ]
   },
 
@@ -546,21 +547,21 @@ section2: [
     id: 'quiz_im_1',
     type: 'quiz',
     question: 'Which one is "Igloo"?',
-    options: ['/images/igloo.png', '/images/jam.png', '/images/king.png'],
+    options: ['/images/igloo.jpg', '/images/jam.webp', '/images/king.webp'],
     correct: 0
   },
   {
     id: 'quiz_im_2',
     type: 'quiz',
     question: 'Find the "Kite"',
-    options: ['/images/key.png', '/images/kite.png', '/images/leaf.png'],
+    options: ['/images/key.jpg', '/images/kite.jpg', '/images/leaf.webp'],
     correct: 1
   },
   {
     id: 'quiz_im_3',
     type: 'quiz',
     question: 'Which one starts with "M"?',
-    options: ['/images/lion.png', '/images/lamp.png', '/images/mouse.png'],
+    options: ['/images/lion.webp', '/images/leg.jpg', '/images/mouse.webp'],
     correct: 2
   },
 
@@ -572,9 +573,9 @@ section2: [
     small: 'n',
     audio: '/audio/en/g1/n_words_group.mp3', // Audio: "N is for Nurse, Nose, and Net"
     subItems: [
-      { name: 'Nurse', image: '/images/nurse.png' },
-      { name: 'Nose', image: '/images/nose.png' },
-      { name: 'Net', image: '/images/net.png' }
+      { name: 'Nurse', image: '/images/nurse.webp' },
+      { name: 'Nail', image: '/images/nail.webp' },
+      { name: 'Nine', image: '/images/nine.jpg' }
     ]
   },
   {
@@ -585,8 +586,8 @@ section2: [
     audio: '/audio/en/g1/o_words_group.mp3', // Audio: "O is for Orange, Owl, and Octopus"
     subItems: [
       { name: 'Orange', image: '/images/orange.png' },
-      { name: 'Owl', image: '/images/owl.png' },
-      { name: 'Octopus', image: '/images/octopus.png' }
+      { name: 'Onion', image: '/images/onion.webp' },
+      { name: 'Ostrich', image: '/images/ostrich.webp' }
     ]
   },
   {

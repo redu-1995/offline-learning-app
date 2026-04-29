@@ -1,6 +1,6 @@
-import './AudioDictionary.css';
+import './AudioDiscovery.css';
 
-const AudioDictionary = ({ current, playSound }) => {
+const AudioDiscovery = ({ current, playSound }) => {
   return (
     <div className="dictionary-slide animate-in">
       <div className="dictionary-header">
@@ -24,4 +24,4 @@ const AudioDictionary = ({ current, playSound }) => {
   );
 };
 
-export default AudioDictionary;
+export default AudioDiscovery;
