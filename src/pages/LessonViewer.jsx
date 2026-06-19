@@ -1,12 +1,11 @@
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect, useMemo, useRef } from 'react';
 import '../styles/LessonViewer.css';
 
 // Slide Components
 import AlphabetHero from '../components/slides/AlphabetHero';
 import LetterFocus from '../components/slides/LetterFocus';
-import QuizSlide from '../components/slides/QuizSlide'; 
+import QuizSlide from '../components/slides/QuizSlide';
 import AudioDiscovery from '../components/slides/AudioDiscovery';
-
 
 const LessonViewer = ({ unitData = [], onComplete }) => {
 
@@ -17,184 +16,409 @@ const LessonViewer = ({ unitData = [], onComplete }) => {
     isCorrect: null
   });
 
-  // ✅ SAFE CURRENT SLIDE (prevents crash)
+
+  // Store every created audio instance
+  const audioRefs = useRef([]);
+
+
+  // SAFE CURRENT SLIDE
   const current = useMemo(() => {
     return unitData?.[currentIndex] || null;
   }, [unitData, currentIndex]);
 
-  // -----------------------------
-  // AUDIO (SAFE + CONTROLLED)
-  // -----------------------------
-  const playSound = (path) => {
-    if (!path) return;
 
-    try {
-      const audio = new Audio(path);
-      audio.play().catch(() => {});
-    } catch (err) {
-      console.log("Audio error:", err);
-    }
-  };
 
-  // -----------------------------
-  // RESET QUIZ + AUTO AUDIO
-  // -----------------------------
-  useEffect(() => {
+  // --------------------------------
+  // STOP ALL AUDIO
+  // --------------------------------
+  const stopAllAudio = () => {
 
-    if (!current) return;
+    audioRefs.current.forEach(audio => {
 
-    setQuizState({
-      selected: null,
-      isCorrect: null
+      try {
+        audio.pause();
+        audio.currentTime = 0;
+      } catch(err){
+        console.log(err);
+      }
+
     });
 
-    if (current.audio) {
-      playSound(current.audio);
+
+    audioRefs.current = [];
+
+  };
+
+
+
+  // --------------------------------
+  // PLAY AUDIO
+  // --------------------------------
+  const playSound = (path) => {
+
+    if(!path) return;
+
+
+    try {
+
+      // stop previous sounds first
+      stopAllAudio();
+
+
+      const audio = new Audio(path);
+
+
+      // save reference
+      audioRefs.current.push(audio);
+
+
+      audio.play().catch(()=>{});
+
+
+    } catch(err){
+
+      console.log("Audio error:", err);
+
     }
 
-  }, [currentIndex, current?.audio]);
+  };
 
-  // -----------------------------
+
+
+
+  // --------------------------------
+  // RESET QUIZ + AUTO AUDIO
+  // --------------------------------
+  useEffect(()=>{
+
+
+    if(!current) return;
+
+
+    // reset quiz state
+    setQuizState({
+      selected:null,
+      isCorrect:null
+    });
+
+
+
+    // autoplay only normal slides
+    if(
+      current.type !== "quiz" &&
+      current.audio
+    ){
+
+      playSound(current.audio);
+
+    }
+
+
+
+    // cleanup when leaving slide
+    return ()=>{
+
+      stopAllAudio();
+
+    };
+
+
+  },[currentIndex]);
+
+
+
+
+
+  // --------------------------------
   // NEXT
-  // -----------------------------
+  // --------------------------------
   const handleNext = () => {
 
-    if (currentIndex < unitData.length - 1) {
-      setCurrentIndex((prev) => prev + 1);
-    } else {
+
+    stopAllAudio();
+
+
+    if(currentIndex < unitData.length - 1){
+
+      setCurrentIndex(prev => prev + 1);
+
+    }else{
+
       onComplete?.();
+
     }
+
   };
 
-  // -----------------------------
+
+
+
+  // --------------------------------
   // BACK
-  // -----------------------------
+  // --------------------------------
   const handleBack = () => {
 
-    if (currentIndex > 0) {
-      setCurrentIndex((prev) => prev - 1);
-    } else {
+
+    stopAllAudio();
+
+
+    if(currentIndex > 0){
+
+      setCurrentIndex(prev => prev - 1);
+
+    }else{
+
       onComplete?.();
+
     }
+
   };
 
+
+
+
+  // --------------------------------
+  // EXIT
+  // --------------------------------
   const handleExit = () => {
-    // You can add a confirmation here if you like
-    // if (window.confirm("Do you want to leave the lesson?")) {
-       onComplete(); 
-    // }
+
+    stopAllAudio();
+
+    onComplete?.();
+
   };
-  // -----------------------------
-  // RENDER SLIDE ENGINE
-  // -----------------------------
+
+
+
+
+
+  // --------------------------------
+  // SLIDE RENDER ENGINE
+  // --------------------------------
   const renderSlide = () => {
 
-    if (!current) {
+
+    if(!current){
+
       return (
+
         <div className="unknown-slide">
+
           <h2>No Content</h2>
+
         </div>
+
       );
+
     }
 
-    switch (current.type) {
 
-      case 'alphabet-hero':
+
+    switch(current.type){
+
+
+      case "alphabet-hero":
+
         return (
+
           <AlphabetHero
             current={current}
             playSound={playSound}
           />
+
         );
 
-      case 'letter-focus':
+
+
+      case "letter-focus":
+
         return (
+
           <LetterFocus
             current={current}
             playSound={playSound}
           />
+
         );
 
-      case 'quiz':
+
+
+      case "quiz":
+
         return (
+
           <QuizSlide
+
             current={current}
+
             quizState={quizState}
+
             setQuizState={setQuizState}
+
             playSound={playSound}
+
           />
+
         );
-        case 'audio-discovery':
-        return <AudioDiscovery current={current} playSound={playSound} />;
+
+
+
+      case "audio-discovery":
+
+        return (
+
+          <AudioDiscovery
+
+            current={current}
+
+            playSound={playSound}
+
+          />
+
+        );
+
+
 
       default:
+
+
         return (
+
           <div className="unknown-slide">
+
             <h2>Unknown Slide Type</h2>
+
             <p>{current.type}</p>
+
           </div>
+
         );
+
     }
+
+
   };
 
-  // -----------------------------
+
+
+
+
+
+  // --------------------------------
   // UI
-  // -----------------------------
+  // --------------------------------
   return (
+
     <div className="viewer-stage">
 
+
       {/* TOP NAV */}
+
       <div className="viewer-nav">
-        <button className="exit-btn" onClick={handleExit}>
+
+
+        <button
+          className="exit-btn"
+          onClick={handleExit}
+        >
           ✕ Close
         </button>
+
+
+
         <button
           className="nav-back-btn"
           onClick={handleBack}
         >
-          {currentIndex === 0 ? '✕' : '←'}
+
+          {currentIndex === 0 ? "✕" : "←"}
+
         </button>
+
+
+
 
         <div className="progress-container">
+
           <div
+
             className="progress-fill"
+
             style={{
-              width: `${((currentIndex + 1) / unitData.length) * 100}%`
+
+              width:
+              `${((currentIndex + 1) / unitData.length) * 100}%`
+
             }}
+
           />
+
         </div>
 
+
+
+
         <span className="coin-count">
+
           ⭐ {currentIndex * 10}
+
         </span>
 
+
       </div>
 
-      {/* MAIN CONTENT */}
+
+
+
+
+      {/* CONTENT */}
+
       <div className="content-card">
+
         {renderSlide()}
+
       </div>
+
+
+
+
 
       {/* FOOTER */}
+
       <div className="viewer-footer">
 
+
         <button
+
           className="next-btn-mega"
+
           onClick={handleNext}
+
           disabled={
-            current?.type === 'quiz' &&
+            current?.type === "quiz" &&
             !quizState.isCorrect
           }
+
         >
-          {currentIndex === unitData.length - 1
-            ? 'FINISH! 🎉'
-            : 'NEXT →'}
+
+          {
+            currentIndex === unitData.length - 1
+            ? "FINISH! 🎉"
+            : "NEXT →"
+          }
+
+
         </button>
+
 
       </div>
 
+
     </div>
+
   );
+
 };
+
 
 export default LessonViewer;

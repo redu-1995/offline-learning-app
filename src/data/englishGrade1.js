@@ -72,31 +72,11 @@ export const englishGrade1 = {
           type: 'quiz',
           title: 'Find the Match',
           question: 'Find the letter "E"',
-          options: ['D', 'E', 'F'],
+          options: ['images/d.png', 'images/e.png', 'images/f.jpg'],
           correct: 1,
           audio: '/audio/en/g1/quiz_find_e.mp3'
         },
-        {
-    id: 'g1_u1_d',
-    type: 'alphabet-hero',
-    title: 'Letter D',
-    big: 'D', small: 'd', icon: 'images/dog.jpg', name: 'Dog',
-    audio: '/audio/en/g1/d_hero.mp3'
-  },
-  {
-    id: 'g1_u1_e',
-    type: 'alphabet-hero',
-    title: 'Letter E',
-    big: 'E', small: 'e', icon: 'images/egg.webp', name: 'Egg',
-    audio: '/audio/en/g1/e_hero.mp3'
-  },
-  {
-    id: 'g1_u1_f',
-    type: 'alphabet-hero',
-    title: 'Letter F',
-    big: 'F', small: 'f', icon: 'images/fish.webp', name: 'Fish',
-    audio: '/audio/en/g1/f_hero.mp3'
-  },
+        
   {
     id: 'g1_u1_words_3',
     type: 'letter-focus',
@@ -304,7 +284,7 @@ export const englishGrade1 = {
     id: 'g1_u1_y',
     type: 'alphabet-hero',
     title: 'Letter Y',
-    big: 'Y', small: 'y', icon: 'images/yo_yo.webp', name: 'Yo-yo',
+    big: 'Y', small: 'y', icon: 'images/yoyo.jpg', name: 'Yo-yo',
     audio: '/audio/en/g1/y_hero.mp3'
   },
   {
@@ -329,7 +309,7 @@ export const englishGrade1 = {
     type: 'quiz',
     title: 'Alphabet Master!',
     question: 'Which one is the "Zebra"?',
-    options: ['images/zebra.webp', 'images/yo_yo.webp', 'images/box.webp'],
+    options: ['images/zebra.jpg', 'images/yoyo.jpg', 'images/zoo.webp'],
     correct: 0,
     audio: '/audio/en/g1/quiz_zebra.mp3'
   }
@@ -380,7 +360,7 @@ section2: [
     audio: '/audio/en/g1/d_words_group.mp3', // Audio says: "D is for Desk, Dog, and Duck"
     subItems: [
       { name: 'Desk', image: '/images/desk.webp' },
-      { name: 'Duster', image: '/images/duster.jppg' },
+      { name: 'Duster', image: '/images/duster.jpeg' },
       { name: 'Dog', image: '/images/dog.jpg' }
     ]
   },
@@ -397,14 +377,14 @@ section2: [
     id: 'quiz_ad_2',
     type: 'quiz',
     question: 'Find the "Dog"',
-    options: ['/images/carrot.webp', '/images/dog.jpg', '/images/ant.png'],
+    options: ['/images/carrot.webp', '/images/dog.jpg', '/images/ant.webp'],
     correct: 1
   },
   {
     id: 'quiz_ad_3',
     type: 'quiz',
     question: 'Which one is the "Chair"?',
-    options: ['/images/desk.webp', '/images/chair.webp', '/images/bag.jpg'],
+    options: ['/images/desk.webp', '/images/chair.webp', '/images/bag.webp'],
     correct: 1
   },
   // --- GROUP 2: E, F, G, H ---
@@ -561,7 +541,7 @@ section2: [
     id: 'quiz_im_3',
     type: 'quiz',
     question: 'Which one starts with "M"?',
-    options: ['/images/lion.webp', '/images/leg.jpg', '/images/mouse.webp'],
+    options: ['/images/lion.webp', '/images/leg.webp', '/images/mouse.webp'],
     correct: 2
   },
 
@@ -574,7 +554,7 @@ section2: [
     audio: '/audio/en/g1/n_words_group.mp3', // Audio: "N is for Nurse, Nose, and Net"
     subItems: [
       { name: 'Nurse', image: '/images/nurse.webp' },
-      { name: 'Nail', image: '/images/nail.webp' },
+      { name: 'Nail', image: '/images/nail.jpg' },
       { name: 'Nine', image: '/images/nine.jpg' }
     ]
   },
@@ -585,7 +565,7 @@ section2: [
     small: 'o',
     audio: '/audio/en/g1/o_words_group.mp3', // Audio: "O is for Orange, Owl, and Octopus"
     subItems: [
-      { name: 'Orange', image: '/images/orange.png' },
+      { name: 'Orange', image: '/images/orange.webp' },
       { name: 'Onion', image: '/images/onion.webp' },
       { name: 'Ostrich', image: '/images/ostrich.webp' }
     ]
@@ -597,9 +577,9 @@ section2: [
     small: 'p',
     audio: '/audio/en/g1/p_words_group.mp3', // Audio: "P is for Pancake, Pen, and Pizza"
     subItems: [
-      { name: 'Pancake', image: '/images/pancake.png' },
-      { name: 'Pen', image: '/images/pen.png' },
-      { name: 'Pizza', image: '/images/pizza.png' }
+      { name: 'Pancake', image: '/images/pancake.webp' },
+      { name: 'Pen', image: '/images/pen.jpg' },
+      { name: 'Pizza', image: '/images/pizza.jpg' }
     ]
   },
   {
@@ -609,9 +589,9 @@ section2: [
     small: 'q',
     audio: '/audio/en/g1/q_words_group.mp3', // Audio: "Q is for Queen, Quill, and Quiet"
     subItems: [
-      { name: 'Queen', image: '/images/queen.png' },
-      { name: 'Quill', image: '/images/quill.png' },
-      { name: 'Quiet', image: '/images/quiet.png' }
+      { name: 'Queen', image: '/images/queen.webp' },
+      { name: 'Quill', image: '/images/quilt.jpg' },
+      { name: 'Quiet', image: '/images/quite.png' }
     ]
   },
   {
@@ -621,9 +601,9 @@ section2: [
     small: 'r',
     audio: '/audio/en/g1/r_words_group.mp3', // Audio: "R is for Rain, Rabbit, and Ring"
     subItems: [
-      { name: 'Rain', image: '/images/rain.png' },
-      { name: 'Rabbit', image: '/images/rabbit.png' },
-      { name: 'Ring', image: '/images/ring.png' }
+      { name: 'Rain', image: '/images/rain.jpg' },
+      { name: 'Rabbit', image: '/images/rabbit.webp' },
+      { name: 'Ring', image: '/images/ring.webp' }
     ]
   },
   {
@@ -634,7 +614,7 @@ section2: [
     audio: '/audio/en/g1/s_words_group.mp3', // Audio: "S is for Sandal, Sun, and Snake"
     subItems: [
       { name: 'Sandal', image: '/images/sandal.png' },
-      { name: 'Sun', image: '/images/sun.png' },
+      { name: 'Sun', image: '/images/sun.jpg' },
       { name: 'Snake', image: '/images/snake.png' }
     ]
   },
@@ -644,21 +624,21 @@ section2: [
     id: 'quiz_ns_1',
     type: 'quiz',
     question: 'Which one is "Octopus"?',
-    options: ['/images/nurse.png', '/images/octopus.png', '/images/pancake.png'],
+    options: ['/images/nurse.webp', '/images/octopus.png', '/images/pancake.webp'],
     correct: 1
   },
   {
     id: 'quiz_ns_2',
     type: 'quiz',
     question: 'Find the "Rabbit"',
-    options: ['/images/rabbit.png', '/images/sandal.png', '/images/queen.png'],
+    options: ['/images/rabbit.webp', '/images/sandal.png', '/images/queen.webp'],
     correct: 0
   },
   {
     id: 'quiz_ns_3',
     type: 'quiz',
     question: 'Which one starts with "P"?',
-    options: ['/images/orange.png', '/images/pizza.png', '/images/rain.png'],
+    options: ['/images/orange.webp', '/images/pizza.jpg', '/images/rain.jpg'],
     correct: 1
   },
 
@@ -732,7 +712,7 @@ section2: [
     small: 'y',
     audio: '/audio/en/g1/y_words_group.mp3', // Audio: "Y is for Yo-yo, Yellow, and Yak"
     subItems: [
-      { name: 'Yo-yo', image: '/images/yoyo.png' },
+      { name: 'Yo-yo', image: '/images/yoyo.jpg' },
       { name: 'Yellow', image: '/images/yellow.png' },
       { name: 'Yak', image: '/images/yak.png' }
     ]
@@ -744,8 +724,8 @@ section2: [
     small: 'z',
     audio: '/audio/en/g1/z_words_group.mp3', // Audio: "Z is for Zebra, Zoo, and Zipper"
     subItems: [
-      { name: 'Zebra', image: '/images/zebra.png' },
-      { name: 'Zoo', image: '/images/zoo.png' },
+      { name: 'Zebra', image: '/images/zebra.jpg' },
+      { name: 'Zoo', image: '/images/zoo.webp' },
       { name: 'Zipper', image: '/images/zipper.png' }
     ]
   },

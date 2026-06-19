@@ -1,59 +1,161 @@
+import { useState } from 'react';
 import './AlphabetHero.css';
+
 const AlphabetHero = ({ current, playSound }) => {
+
+  const [playingIndex, setPlayingIndex] = useState(null);
+
+
+
+  const handlePlay = (audio, index) => {
+
+    if (!audio) return;
+
+
+    setPlayingIndex(index);
+
+
+    playSound(audio);
+
+
+    const tempAudio = new Audio(audio);
+
+
+    tempAudio.addEventListener(
+      "ended",
+      () => {
+        setPlayingIndex(null);
+      }
+    );
+
+  };
+
+
 
   return (
     <div className="hero-content fade-in">
 
+
       {/* LETTERS */}
       <div className="letter-twins">
-        <span className="big-letter">{current.big}</span>
-        <span className="small-letter">{current.small}</span>
+
+        <span className="big-letter">
+          {current.big}
+        </span>
+
+
+        <span className="small-letter">
+          {current.small}
+        </span>
+
       </div>
 
-      {/* ONLY SHOW GRID IF letters EXISTS */}
 
-      {current.letters && current.letters.length > 0 && (
+
+
+
+      {/* WORD GRID */}
+
+      {current.letters &&
+      current.letters.length > 0 && (
+
         <div className="word-grid">
 
+
           {current.letters.map((item, idx) => (
+
+
             <div
+
               key={idx}
+
               className="word-card"
-              onClick={() => playSound(current.audio)}
+
+              onClick={() =>
+                handlePlay(item.audio || current.audio, idx)
+              }
+
             >
 
-              <div className="word-circle">
-                <img
-                    src={item.image}
-                    alt={item.word}
-                    className="word-image"
-                />
-                </div>
 
-              <p>{item.word}</p>
+              <div className="word-circle">
+
+
+                <img
+
+                  src={item.image}
+
+                  alt={item.word}
+
+                  className="word-image"
+
+                />
+
+
+              </div>
+
+
+
+              <p>
+
+                {playingIndex === idx
+                  ? "🔊"
+                  : item.word
+                }
+
+              </p>
+
+
 
             </div>
+
+
           ))}
 
+
         </div>
+
       )}
 
-      {/* FALLBACK (OLD FORMAT SUPPORT) */}
+
+
+
+
+
+      {/* FALLBACK */}
+
       {!current.letters && (
+
         <div
+
           className="hero-image-circle"
-          onClick={() => playSound(current.audio)}
+
+          onClick={() =>
+            handlePlay(current.audio, 0)
+          }
+
         >
+
+
           <img
+
             src={current.icon}
+
             alt={current.name}
+
             className="hero-image"
+
           />
+
+
         </div>
+
       )}
+
 
     </div>
   );
 };
+
 
 export default AlphabetHero;
